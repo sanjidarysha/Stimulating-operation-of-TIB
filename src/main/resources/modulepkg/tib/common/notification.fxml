@@ -26,7 +26,7 @@
         </ImageView>
         <AnchorPane fx:id="paneLog" layoutX="896.0" prefHeight="120.0" prefWidth="304.0">
             <children>
-                <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="2.0" layoutY="41.0" prefHeight="26.0" prefWidth="150.0" text="Name" textAlignment="RIGHT" wrapText="true">
+                <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="2.0" layoutY="41.0" prefHeight="26.0" prefWidth="150.0" style="-fx-border-color: black;" text="Name" textAlignment="RIGHT" wrapText="true">
                     <font>
                         <Font size="16.0" />
                     </font>

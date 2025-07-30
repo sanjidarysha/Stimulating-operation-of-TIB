@@ -46,7 +46,7 @@
                 <Image url="@../image/Mail.png" />
             </image>
         </ImageView>
-          <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="908.0" layoutY="38.0" prefHeight="26.0" prefWidth="140.0" text="Name" textAlignment="RIGHT" wrapText="true">
+          <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="908.0" layoutY="38.0" prefHeight="26.0" prefWidth="140.0" style="-fx-border-color: black;" text="Name" textAlignment="RIGHT" wrapText="true">
               <font>
                   <Font size="16.0" />
               </font>
