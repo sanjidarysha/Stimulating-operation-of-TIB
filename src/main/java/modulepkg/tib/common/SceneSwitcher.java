@@ -1,10 +1,10 @@
 package modulepkg.tib.common;
 
-import modulepkg.tib.HelloApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import modulepkg.tib.HelloApplication;
 
 import java.io.IOException;
 

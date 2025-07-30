@@ -1,17 +1,19 @@
 package modulepkg.tib;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import modulepkg.tib.common.SceneSwitcher;
 
 import java.io.IOException;
 
 public class HelloApplication extends Application {
-
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("profile_change_password.fxml"));
+
+        SceneSwitcher.stage = stage;
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("common/login.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Transparency International Bangladesh");
         stage.setScene(scene);
@@ -19,6 +21,7 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
+
         launch();
     }
 }
