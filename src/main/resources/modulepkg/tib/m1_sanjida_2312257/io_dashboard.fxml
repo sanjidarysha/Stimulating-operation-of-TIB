@@ -7,30 +7,49 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="569.0" prefWidth="908.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.IoDashboardController">
     <children>
-        <Line endX="10.799957275390625" endY="409.0" layoutX="175.0" layoutY="160.0" startX="10.799972534179688" startY="-76.0" />
-        <Button layoutX="14.0" layoutY="94.0" mnemonicParsing="false" onAction="#investigationButton" prefHeight="37.0" prefWidth="154.0" text="Investigation Report" />
-        <Button layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#trackreportButton" prefHeight="37.0" prefWidth="154.0" text="Track Report " />
-        <Button layoutX="14.0" layoutY="207.0" mnemonicParsing="false" onAction="#externatinalButton" prefHeight="37.0" prefWidth="154.0" text="External Coordination" />
-        <Button layoutX="14.0" layoutY="262.0" mnemonicParsing="false" onAction="#publiccomplaintButton" prefHeight="37.0" prefWidth="154.0" text="Public Complaint" />
-        <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#evidenceButton" prefHeight="37.0" prefWidth="154.0" text="Evidence Record" />
-        <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#assignedInvestigationButton" prefHeight="37.0" prefWidth="154.0" text="Assigned Investigation" />
-        <Button layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#witnessButton" prefHeight="37.0" prefWidth="154.0" text="Witness Information" />
-        <Button layoutX="14.0" layoutY="481.0" mnemonicParsing="false" onAction="#previousInvestigationButton" prefHeight="37.0" prefWidth="154.0" text="Previous Investigation" />
-        <Label alignment="TOP_CENTER" layoutX="168.0" prefHeight="58.0" prefWidth="587.0" text="Transparency International BD">
-            <font>
-                <Font name="System Bold" size="40.0" />
-            </font>
-        </Label>
-        <Line endX="392.800048828125" endY="-3.814697265625E-6" layoutX="348.0" layoutY="58.0" startX="-163.20001220703125" startY="-3.814697265625E-6" />
-        <ImageView fitHeight="279.0" fitWidth="336.0" layoutX="328.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true" style="visibility: transparent;">
-            <image>
-                <Image url="@../image/dashboardBackground.jpeg" />
-            </image>
-        </ImageView>
-        <Label layoutX="14.0" layoutY="39.0" prefHeight="32.0" prefWidth="118.0" text="Dashboard">
+      <ImageView fitHeight="577.0" fitWidth="936.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/LoginBackground.jpg" />
+         </image>
+      </ImageView>
+        <Line endX="10.799957275390625" endY="409.0" layoutX="175.0" layoutY="160.0" startX="10.799972534179688" startY="-76.0" stroke="WHITE" />
+        <Button layoutX="14.0" layoutY="94.0" mnemonicParsing="false" onAction="#investigationButton" prefHeight="37.0" prefWidth="154.0" text="Investigation Report">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#trackreportButton" prefHeight="37.0" prefWidth="154.0" text="Track Report ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="207.0" mnemonicParsing="false" onAction="#externatinalButton" prefHeight="37.0" prefWidth="154.0" text="External Coordination">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="262.0" mnemonicParsing="false" onAction="#publiccomplaintButton" prefHeight="37.0" prefWidth="154.0" text="Public Complaint">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="318.0" mnemonicParsing="false" onAction="#evidenceButton" prefHeight="37.0" prefWidth="154.0" text="Evidence Record">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="371.0" mnemonicParsing="false" onAction="#assignedInvestigationButton" prefHeight="37.0" prefWidth="154.0" text="Assigned Investigation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="427.0" mnemonicParsing="false" onAction="#witnessButton" prefHeight="37.0" prefWidth="154.0" text="Witness Information">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="14.0" layoutY="481.0" mnemonicParsing="false" onAction="#previousInvestigationButton" prefHeight="37.0" prefWidth="154.0" text="Previous Investigation">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Label layoutX="32.0" layoutY="41.0" prefHeight="32.0" prefWidth="118.0" text="Dashboard" textFill="WHITE">
             <font>
                 <Font name="System Bold" size="22.0" />
             </font>
@@ -55,10 +74,25 @@
                 <Image url="@../image/Mail.png" />
             </image>
         </ImageView>
-        <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="760.0" layoutY="68.0" prefHeight="26.0" prefWidth="140.0" text="Name" textAlignment="RIGHT" wrapText="true">
+        <Label fx:id="labelName" alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="760.0" layoutY="68.0" prefHeight="26.0" prefWidth="140.0" style="-fx-border-color: white;" text="Name" textAlignment="RIGHT" textFill="WHITE" wrapText="true">
             <font>
                 <Font size="16.0" />
             </font>
         </Label>
+      <Text fill="WHITE" layoutX="200.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-opacity: 1.0;" text="Transparency" wrappingWidth="641.9999694824219">
+         <font>
+            <Font name="System Bold" size="70.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="200.0" layoutY="295.0" strokeType="OUTSIDE" strokeWidth="0.0" text="International" wrappingWidth="465.3333435058593">
+         <font>
+            <Font name="System Bold" size="55.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="200.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bangladesh" wrappingWidth="359.9999694824218">
+         <font>
+            <Font name="System Bold" size="48.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>
