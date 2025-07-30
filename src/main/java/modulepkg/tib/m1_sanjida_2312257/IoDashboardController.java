@@ -14,9 +14,12 @@ public class IoDashboardController {
     private Label labelName;
 
     @FXML
-    void assignedInvestigationButton(ActionEvent event) {
+    void assignedInvestigationButton(ActionEvent event)throws IOException {
 
+        SceneSwitcher.switchTo("m1_sanjida_2312257/submit");
     }
+
+
 
     @FXML
     void evidenceButton(ActionEvent event) {
