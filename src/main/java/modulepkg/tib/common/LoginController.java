@@ -43,6 +43,14 @@ public class LoginController {
         case "Admin":
             SceneSwitcher.switchTo("m1_sanjida_2312257/ad_dashboard");
             break;
+
+
+        case "Community Officer":
+            SceneSwitcher.switchTo("m1_mohima_2110887/CommunityOfficerDashboard");
+            break;
+        case "General Public":
+            SceneSwitcher.switchTo("m1_mohima_2110887/GeneralPublicdashboard");
+            break;
     }
 
 }
