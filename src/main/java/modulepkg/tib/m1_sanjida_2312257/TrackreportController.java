@@ -9,7 +9,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
+import modulepkg.tib.common.SceneSwitcher;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class TrackreportController
@@ -43,6 +45,7 @@ public class TrackreportController
     }
 
     @javafx.fxml.FXML
-    public void updatenote(ActionEvent actionEvent) {
+    public void updatenote(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/trackreportupdate");
     }
 }
