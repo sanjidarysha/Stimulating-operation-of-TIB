@@ -2,8 +2,13 @@ package modulepkg.tib.m1_sanjida_2312257;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import modulepkg.tib.HelloApplication;
 import modulepkg.tib.common.*;
 
 import java.io.IOException;
@@ -14,9 +19,7 @@ public class IoDashboardController {
     private Label labelName;
 
     @FXML
-    void assignedInvestigationButton(ActionEvent event)throws IOException {
-
-        SceneSwitcher.switchTo("m1_sanjida_2312257/submit");
+    void assignedInvestigationButton(ActionEvent event){
     }
 
 
@@ -27,12 +30,15 @@ public class IoDashboardController {
     }
 
     @FXML
-    void externatinalButton(ActionEvent event) {
+    void externatinalButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/collaborateexternal");
 
     }
 
+
     @FXML
-    void investigationButton(ActionEvent event) {
+    void investigationButton(ActionEvent actionEvent)  throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/investigation_reportview");
 
     }
 
@@ -71,9 +77,11 @@ public class IoDashboardController {
     }
 
     @FXML
-    void trackreportButton(ActionEvent event) {
+    void trackreportButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/trackreport");
 
     }
+
 
     @FXML
     void witnessButton(ActionEvent event) {

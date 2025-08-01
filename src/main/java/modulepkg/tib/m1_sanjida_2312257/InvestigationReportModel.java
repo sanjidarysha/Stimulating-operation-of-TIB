@@ -3,52 +3,64 @@ package modulepkg.tib.m1_sanjida_2312257;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class InvestigationReportModel {
+public class InvestigationReportModel {String username,id,location,involved,description;
 
-    private final String investigationID;
-    private String description;
-    private ArrayList<String> peopleInvolved;
-    private String location;
-
-
-    public InvestigationReportModel(String investigationID, String description, String peopleInvolved, String location) {
-        this.investigationID = investigationID;
+    public InvestigationReportModel(String username, String id, String location, String involved, String description) {
+        this.username = username;
+        this.id = id;
+        this.location = location;
+        this.involved = involved;
         this.description = description;
-        this.peopleInvolved = new ArrayList<>(Arrays.asList(peopleInvolved.split(",")));
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
         this.location = location;
     }
 
+    public String getInvolved() {
+        return involved;
+    }
 
-    public void fillOutForm(String description, String peopleCSV, String location) {
+    public void setInvolved(String involved) {
+        this.involved = involved;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
         this.description = description;
-        this.peopleInvolved = new ArrayList<>(Arrays.asList(peopleCSV.split(",")));
-        this.location = location;
     }
 
-    // Submission validation
-    public boolean submitReport() {
-        if (investigationID == null || investigationID.isEmpty())
-            return false;
-        if (description == null || description.isEmpty())
-            return false;
-        if (peopleInvolved == null || peopleInvolved.isEmpty())
-            return false;
-        if (location == null || location.isEmpty()) {
-            return false;
-        }
-
-        return true;
-    }
-
-    // Confirm the submission
-    public boolean confirmSubmission() {
-        System.out.println("Submitted Report: " + investigationID);
-        return true;
-    }
-
-    // toString override
     @Override
     public String toString() {
-        return "ID: " + investigationID + " | People: " + peopleInvolved + " | Location: " + location;
+        return "InvestigationReportModel{" +
+                "username='" + username + '\'' +
+                ", id='" + id + '\'' +
+                ", location='" + location + '\'' +
+                ", involved='" + involved + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
