@@ -30,9 +30,11 @@ public class IoDashboardController {
     }
 
     @FXML
-    void externatinalButton(ActionEvent event) {
+    void externatinalButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/collaborateexternal");
 
     }
+
 
     @FXML
     void investigationButton(ActionEvent actionEvent)  throws IOException {
@@ -75,9 +77,11 @@ public class IoDashboardController {
     }
 
     @FXML
-    void trackreportButton(ActionEvent event) {
+    void trackreportButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/trackreport");
 
     }
+
 
     @FXML
     void witnessButton(ActionEvent event) {
