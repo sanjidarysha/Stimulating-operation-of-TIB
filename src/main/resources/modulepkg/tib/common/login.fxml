@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="527.0" prefWidth="867.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.common.LoginController">
+   <children>
+      <ImageView fitHeight="555.0" fitWidth="899.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/LoginBackground.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="emailtextfield" layoutX="618.0" layoutY="160.0" prefHeight="44.0" prefWidth="230.0" promptText="Enter email " />
+      <PasswordField fx:id="passwordtextfield" layoutX="618.0" layoutY="224.0" prefHeight="44.0" prefWidth="230.0" promptText="Enter password" />
+      <Button layoutX="618.0" layoutY="359.0" mnemonicParsing="false" onAction="#loginbutton" prefHeight="34.0" prefWidth="106.0" text="Login">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="488.0" layoutY="165.0" prefHeight="35.0" prefWidth="66.0" text="Email" textFill="#fafafa">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="488.0" layoutY="222.0" prefHeight="35.0" prefWidth="106.0" text="Password" textFill="#fafafa">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="742.0" layoutY="359.0" mnemonicParsing="false" onAction="#signupbutton" prefHeight="34.0" prefWidth="106.0" text="Sign up">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="488.0" layoutY="290.0" prefHeight="35.0" prefWidth="106.0" text="Role" textFill="#fafafa">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="roleComboBox" layoutX="619.0" layoutY="290.0" prefHeight="35.0" prefWidth="230.0" promptText="Select" />
+      <Label layoutX="35.0" layoutY="27.0" prefHeight="84.0" prefWidth="826.0" text="Transparency International Bangladesh" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="176.0" prefHeight="30.0" prefWidth="237.0" text="United Against Corruption" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="26.0" layoutY="211.0" prefHeight="168.0" prefWidth="338.0" text="Transparency International Bangladesh (TIB) is committed to promoting integrity, transparency, and accountability across all sectors of society. Fighting corruption and empowering citizens for a just and equitable Bangladesh is our top priority." textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

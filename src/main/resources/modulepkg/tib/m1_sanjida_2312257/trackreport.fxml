@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="533.0" prefWidth="650.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.TrackreportController">
+   <children>
+      <TableView fx:id="reporttable" layoutX="12.0" layoutY="96.0" prefHeight="200.0" prefWidth="625.0">
+        <columns>
+          <TableColumn fx:id="reportidColumn" prefWidth="205.99999523162842" text="Report id" />
+            <TableColumn fx:id="descriptionColumn" prefWidth="222.00001525878906" text="Description" />
+            <TableColumn fx:id="statusColumn" prefWidth="195.33330281575525" text="Status" />
+        </columns>
+      </TableView>
+      <Label layoutX="248.0" layoutY="33.0" prefHeight="27.0" prefWidth="192.0" text="Track Report View" textFill="#360c36">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextArea fx:id="noteTA" layoutX="41.0" layoutY="314.0" prefHeight="85.0" prefWidth="575.0" promptText="write your note here">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </TextArea>
+      <Button layoutX="41.0" layoutY="412.0" mnemonicParsing="false" onAction="#updatenote" text="update note" />
+      <Label fx:id="alertlabel" layoutX="440.0" layoutY="416.0" text="warning label" textFill="PURPLE" />
+      <Line endX="501.6666259765625" layoutX="125.0" layoutY="306.0" startX="-100.0" />
+      <Line endX="100.0" layoutX="328.0" layoutY="60.0" startX="-100.0" />
+   </children>
+</AnchorPane>

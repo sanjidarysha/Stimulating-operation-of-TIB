@@ -5,4 +5,11 @@ module modulepkg.tib {
 
     opens modulepkg.tib to javafx.fxml;
     exports modulepkg.tib;
+    exports modulepkg.tib.m1_sanjida_2312257;
+    opens modulepkg.tib.m1_sanjida_2312257 to javafx.fxml;
+    exports modulepkg.tib.m1_mohima_2110887;
+    opens modulepkg.tib.m1_mohima_2110887 to javafx.fxml;
+    exports modulepkg.tib.common;
+    opens modulepkg.tib.common to javafx.fxml;
+
 }
