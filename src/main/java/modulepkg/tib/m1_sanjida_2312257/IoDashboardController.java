@@ -72,7 +72,8 @@ public class IoDashboardController {
     }
 
     @FXML
-    void publiccomplaintButton(ActionEvent event) {
+    void publiccomplaintButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/reviewpubliccomplaint");
 
     }
 
