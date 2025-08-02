@@ -38,5 +38,10 @@
       <Text layoutX="406.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Keyword" />
       <DatePicker fx:id="dateDP" layoutX="463.0" layoutY="124.0" prefHeight="25.0" prefWidth="149.0" />
       <Text layoutX="412.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date" />
+      <Label fx:id="alertlabel" layoutX="325.0" layoutY="413.0" text="warning label">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modulepkg.tib.common.SceneSwitcher;
 
@@ -39,6 +36,9 @@ public class ReviewpubliccomplaintController
     @javafx.fxml.FXML
     private TableColumn dateColumn;
     ObservableList<ReviewPublicComplaint>reviewPublicComplaintArrayList = FXCollections.observableArrayList();
+    @FXML
+    private Label alertlabel;
+
     public void initialize() {
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         detailsColumn.setCellValueFactory(new PropertyValueFactory<>("details"));
@@ -54,13 +54,6 @@ public class ReviewpubliccomplaintController
         complainTableView.setItems(reviewPublicComplaintArrayList);
 
     }
-// public void filter(ActionEvent actionEvent) {
-//        ArrayList<Datapackage>filterlist=new ArrayList<>();
-//        for(Datapackage dp:datapackagelist){
-//            if(validityCB1.getValue().equals(dp.getValidity())) {
-//                filterlist.add(dp);}
-//            datapackageTableView.getItems().clear();
-//            datapackageTableView.getItems().addAll(filterlist);
     @FXML
     public void search(ActionEvent actionEvent) {
         ArrayList<ReviewPublicComplaint> filteredList = new ArrayList<>();
@@ -83,10 +76,13 @@ public class ReviewpubliccomplaintController
 
     @FXML
     public void update(ActionEvent actionEvent) {
-        TableView.TableViewSelectionModel selected = complainTableView.getSelectionModel();
+        Object selected = complainTableView.getSelectionModel().getSelectedItem();
         if (selected != null) {
             selected.equals("In Progress");
+            complainTableView.refresh();
+            alertlabel.setText("updated to in progress");
         }
+        else {alertlabel.setText("please select a complaint to update");}
     }
 
     @javafx.fxml.FXML
