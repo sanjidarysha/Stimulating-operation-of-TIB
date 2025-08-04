@@ -1,47 +1,71 @@
 package modulepkg.tib.m1_sanjida_2312257;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class TrackreportupdateController
-{
-    @javafx.fxml.FXML
+public class TrackreportupdateController {
+    @FXML
     private TextField reportidTF;
-    @javafx.fxml.FXML
+    @FXML
     private ComboBox<String> statusCB;
-    @javafx.fxml.FXML
+    @FXML
     private Label alertlabel;
-    @javafx.fxml.FXML
+    @FXML
     private TextField descriptionTF;
 
-    @javafx.fxml.FXML
-    ArrayList<Trackreportupdate> trackreportupdatelist=new ArrayList<>();
+    @FXML
+    ArrayList<Trackreportupdate> trackreportupdatelist = new ArrayList<>();
+
     public void initialize() {
-        statusCB.getItems().addAll("In Progress","Reviewed");
+        statusCB.getItems().addAll("In Progress", "Reviewed");
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void addupdateddata(ActionEvent actionEvent) {
-        String reportid=reportidTF.getText();
-        String description=descriptionTF.getText();
-        String status=statusCB.getValue();
-        Trackreportupdate update =new Trackreportupdate(reportid,description,status);
-        trackreportupdatelist.add(update);
+        if (reportidTF.getText().isEmpty() ||
+                descriptionTF.getText().isEmpty() ||
+                statusCB.getValue().isEmpty()) {
+            alertlabel.setText("please fill up all the fields");
+            return;
+        }
+        String reportid = reportidTF.getText();
+        String description = descriptionTF.getText();
+        String status = statusCB.getValue();
+        Trackreportupdate update = new Trackreportupdate(reportid, description, status);
         alertlabel.setText("successfully updated data");
-    }
-
-    @javafx.fxml.FXML
-    public void savedata(ActionEvent actionEvent) {
-        String reportid=reportidTF.getText();
-        String description=descriptionTF.getText();
-        String status=statusCB.getValue();
-        Trackreportupdate update =new Trackreportupdate(reportid,description,status);
-        trackreportupdatelist.add(update);
-        alertlabel.setText("successfully saved data");
 
     }
+
+    @FXML
+    public void savedata(ActionEvent actionEvent){
+
+            String reportid = reportidTF.getText();
+            String description = descriptionTF.getText();
+            String status = statusCB.getValue();
+
+            if (reportid.isEmpty() || description.isEmpty() || status == null || status.isEmpty()) {
+                alertlabel.setText("Please fill up all the fields.");
+                return;
+            }
+
+            try (FileWriter writer = new FileWriter("Save updated data.txt", true)) {
+                writer.write("Report ID: " + reportid + "\n");
+                writer.write("Description: " + description + "\n");
+                writer.write("Status: " + status + "\n");
+                writer.write("--------------------------------------------------\n");
+
+                alertlabel.setText("Data saved and updated successfully.");
+            } catch (Exception e) {
+                alertlabel.setText("Failed to save data.");
+            }
+        }
 }
+
+
