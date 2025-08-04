@@ -60,9 +60,10 @@ public class TrackreportupdateController {
                 writer.write("Description: " + description + "\n");
                 writer.write("Status: " + status + "\n");
                 writer.write("--------------------------------------------------\n");
+                writer.close();
 
                 alertlabel.setText("Data saved and updated successfully.");
-            } catch (Exception e) {
+            } catch (IOException e) {
                 alertlabel.setText("Failed to save data.");
             }
         }

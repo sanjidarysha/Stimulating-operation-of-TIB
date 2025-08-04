@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import modulepkg.tib.common.SceneSwitcher;
 import modulepkg.tib.common.Session;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class CollaborateexternalController
@@ -22,6 +23,8 @@ public class CollaborateexternalController
     private TextField Labname;
     @javafx.fxml.FXML
     private Label alertlabel;
+    @javafx.fxml.FXML
+    private TextField toTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -36,18 +39,28 @@ public class CollaborateexternalController
     }
 
     @javafx.fxml.FXML
-    public void send(ActionEvent actionEvent) {
+    public void send(ActionEvent actionEvent) throws IOException {
+        String to=toTF.getText();
+        String subject= subjectTF.getText();
+        String message=messageTA.getText();
+
         if(choosepartnerCB.getValue()==null||
+                toTF.getText().isEmpty()||
                 subjectTF.getText().isEmpty()||
                 messageTA.getText().isEmpty()
         )
-        {alertlabel.setText("please fill up choosepartner,subject and message text box");
+        {alertlabel.setText("please fill up all the fields");
             return;
         }
-        String choosepartner=choosepartnerCB.getValue();
-        String subject=subjectTF.getText();
-        String message=messageTA.getText();
-        CollaborateExternalModel add=new CollaborateExternalModel(choosepartner,subject,message);
+        FileWriter writer=new FileWriter("ExternalCoordinationRequest.txt",true);
+        writer.write("To:"+to+"\n");
+        writer.write("Subject:"+subject+"\n");
+        writer.write("message:"+message+"\n");
+        writer.write("...................\n");
+        writer.close();
         alertlabel.setText("Successfully sent message");
+        toTF.clear();
+        subjectTF.clear();
+        messageTA.clear();
     }
 }

@@ -1,9 +1,10 @@
 package modulepkg.tib.m1_sanjida_2312257;
 
-public class CollaborateExternalModel {private String choosepartner,subject,message;
+public class CollaborateExternalModel {private String choosepartner,to,subject,message;
 
-    public CollaborateExternalModel(String choosepartner, String subject, String message) {
+    public CollaborateExternalModel(String choosepartner, String to, String subject, String message) {
         this.choosepartner = choosepartner;
+        this.to = to;
         this.subject = subject;
         this.message = message;
     }
@@ -14,6 +15,14 @@ public class CollaborateExternalModel {private String choosepartner,subject,mess
 
     public void setChoosepartner(String choosepartner) {
         this.choosepartner = choosepartner;
+    }
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
     }
 
     public String getSubject() {
@@ -36,8 +45,12 @@ public class CollaborateExternalModel {private String choosepartner,subject,mess
     public String toString() {
         return "CollaborateExternalModel{" +
                 "choosepartner='" + choosepartner + '\'' +
+                ", to='" + to + '\'' +
                 ", subject='" + subject + '\'' +
                 ", message='" + message + '\'' +
                 '}';
     }
 }
+
+
+
