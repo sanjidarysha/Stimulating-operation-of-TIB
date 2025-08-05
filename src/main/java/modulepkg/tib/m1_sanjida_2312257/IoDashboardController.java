@@ -86,9 +86,10 @@ public class IoDashboardController {
 
 
     @FXML
-    void witnessButton(ActionEvent event) {
-
+    void witnessButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/managewitness");
     }
+
 
     @FXML
     public void initialize() {
