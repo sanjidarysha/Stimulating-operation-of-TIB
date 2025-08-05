@@ -62,9 +62,10 @@ public class IoDashboardController {
     }
 
     @FXML
-    void previousInvestigationButton(ActionEvent event) {
-
+    void previousInvestigationButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/reviewpreviousReport");
     }
+
 
     @FXML
     void profileButton(MouseEvent event) throws IOException {
