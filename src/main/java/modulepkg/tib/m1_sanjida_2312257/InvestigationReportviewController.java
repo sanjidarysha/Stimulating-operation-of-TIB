@@ -50,7 +50,7 @@ public class InvestigationReportviewController
 
         InvestigationReportModel report= new InvestigationReportModel(username,id,location,involved,description);
         investigationReportModelArrayList.add(report);
-        alertLabel.setText("successfully added");
+        alertLabel.setText("successfully submitted");
 
     }
 

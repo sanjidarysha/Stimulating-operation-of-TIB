@@ -45,8 +45,8 @@ public class AdDashboardController {
     }
 
     @FXML
-    void manageAccountButton(ActionEvent event) {
-
+    void manageAccountButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/admanageaccount");
     }
 
     @FXML
