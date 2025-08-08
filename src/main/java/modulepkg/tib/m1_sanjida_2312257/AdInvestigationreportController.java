@@ -51,6 +51,7 @@ public class AdInvestigationreportController
     public void Approve(ActionEvent actionEvent) {
         AdInvestigationReport Selected=reportTableView.getSelectionModel().getSelectedItem();
         if(Selected!=null){
+            reportTableView.refresh();
             descTA.setText(Selected.getDesc());
             warningL.setText("Report Approved");
         }
@@ -61,6 +62,7 @@ public class AdInvestigationreportController
     public void Reject(ActionEvent actionEvent) {
         AdInvestigationReport Selected=reportTableView.getSelectionModel().getSelectedItem();
         if(Selected!=null){
+            reportTableView.refresh();
             descTA.setText(Selected.getDesc());
             warningL.setText("Report Rejected");
         }
