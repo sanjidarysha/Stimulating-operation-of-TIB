@@ -9,8 +9,11 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modulepkg.tib.common.SceneSwitcher;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class AdAssigncasesController
 {
@@ -50,7 +53,7 @@ public class AdAssigncasesController
     }
 
     @FXML
-    public void assign(ActionEvent actionEvent) {
+    public void assign(ActionEvent actionEvent) throws IOException {
         AdAssignCases selected=assignTableView.getSelectionModel().getSelectedItem();
         String officerName = officerTF.getText().trim();;
         if(selected!=null){
@@ -58,11 +61,18 @@ public class AdAssigncasesController
             selected.setStatus("Assigned");
             assignTableView.refresh();
             label.setText(" Assigned to Officer: " + officerName);
-        }
-        else{
-            label.setText("Please select a case and enter an officer name.");
-            }
+            FileWriter writer=new FileWriter("assigned details.txt");
+            String caseid= selected.getCaseid();
+            String title= selected.getTitle();
+            String officer= selected.getOfficer();
+            String status= selected.getStatus();
+            writer.write("case id:"+caseid+"\n");
+            writer.write("title:"+title+"\n");
+            writer.write("officer name:"+officer+"\n");
+            writer.write("status:"+status+"\n");
+            writer.close();
 
+        }
     }
 
     @FXML
