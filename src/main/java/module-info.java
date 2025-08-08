@@ -12,4 +12,10 @@ module modulepkg.tib {
     exports modulepkg.tib.common;
     opens modulepkg.tib.common to javafx.fxml;
 
+    exports modulepkg.tib.Miraz_2222649.researchOfficer;
+    opens modulepkg.tib.Miraz_2222649.researchOfficer to javafx.fxml;
+
+    exports modulepkg.tib.Miraz_2222649.policyAnalyst;
+    opens modulepkg.tib.Miraz_2222649.policyAnalyst to javafx.fxml;
+
 }
