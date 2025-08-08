@@ -10,7 +10,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="475.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.AdmanageaccountController">
    <children>
       <Label layoutX="187.0" layoutY="313.0" prefHeight="17.0" prefWidth="62.0" text="Username">

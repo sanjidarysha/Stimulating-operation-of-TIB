@@ -29,9 +29,11 @@ public class AdDashboardController {
     }
 
     @FXML
-    void investigationReportButton(ActionEvent event) {
-
+    void investigationReportButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_investigationreport");
     }
+
+
 
     @FXML
     void logoutButton(ActionEvent event) throws IOException {
