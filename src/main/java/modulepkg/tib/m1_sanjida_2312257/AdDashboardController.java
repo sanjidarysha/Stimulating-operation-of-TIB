@@ -14,9 +14,10 @@ public class AdDashboardController {
     private Label labelName;
 
     @FXML
-    void assignCaseButton(ActionEvent event) {
+    void assignCaseButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_assigncases");}
 
-    }
+
 
     @FXML
     void budgetButton(ActionEvent event) {
@@ -57,9 +58,10 @@ public class AdDashboardController {
         SceneSwitcher.switchTo("common/notification");    }
 
     @FXML
-    void orgaizationReportButton(ActionEvent event) {
-
+    void orgaizationReportButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_reviewreport");
     }
+
 
     @FXML
     void profileButton(MouseEvent event) throws IOException {
