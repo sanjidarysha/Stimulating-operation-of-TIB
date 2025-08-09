@@ -2,7 +2,7 @@ package modulepkg.tib.m1_sanjida_2312257;
 
 import java.time.LocalDate;
 
-public class AdReviewreport {private String id,title,department,status;
+public class AdReviewreport implements serialized{private String id,title,department,status;
     LocalDate date;
 
     public AdReviewreport(String id, String title, String department, String status, LocalDate date) {
