@@ -16,12 +16,6 @@ public class ManagewitnesssavedController
     }
 
     @javafx.fxml.FXML
-    public void next(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/reviewpreviousReport");
-    }
-
-
-    @javafx.fxml.FXML
     public void back(ActionEvent actionEvent)  throws IOException {
         SceneSwitcher.switchTo("m1_sanjida_2312257/managewitness");
     }

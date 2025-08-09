@@ -67,11 +67,6 @@ public class AdmanageaccountController {
         }
     }
 
-    @javafx.fxml.FXML
-    public void next(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_investigationreport");
-    }
-
 
     @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {

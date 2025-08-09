@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class AdReviewreportController {
     @javafx.fxml.FXML
-    private DatePicker dateTF;
-    @javafx.fxml.FXML
     private TableColumn<AdReviewreport, String> titlecol;
     @javafx.fxml.FXML
     private TableColumn<AdReviewreport, String> idcol;
@@ -35,6 +33,8 @@ public class AdReviewreportController {
     @javafx.fxml.FXML
     private TextField departmentTF;
     ArrayList<AdReviewreport> reviewlist = new ArrayList<>();
+    @javafx.fxml.FXML
+    private DatePicker dateTF;
 
     public AdReviewreportController() throws IOException {
     }
@@ -51,7 +51,6 @@ public class AdReviewreportController {
         reviewlist.add(new AdReviewreport("ORG-006", "IT Infrastructure Review", "IT", "Reviewed", LocalDate.of(2025, 10, 5)));
         reviewlist.add(new AdReviewreport("ORG-009", "Staff Performance Analysis", "HR", "Pending", LocalDate.of(2025, 2, 9)));
         tableview.getItems().setAll(reviewlist);
-        tableview.refresh();
         tableview.setOnMouseClicked(mouseEvent -> {
             AdReviewreport selected = tableview.getSelectionModel().getSelectedItem();
             if (selected != null) {
@@ -105,13 +104,6 @@ public class AdReviewreportController {
 
     }
 
-
-    @javafx.fxml.FXML
-    public void next(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_monitorlog");
-    }
-
-
     @javafx.fxml.FXML
     public void back(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("m1_sanjida_2312257/ad_dashboard");
@@ -125,7 +117,12 @@ public class AdReviewreportController {
 
             FileWriter writer = new FileWriter("exported archiving data.txt");
             writer.write("org id:" + idTF.getText());
-
+            writer.write("title:"+titleTF.getText());
+            writer.write("department:"+departmentTF.getText());
+            writer.write("status:"+statusCB.getValue());
+            writer.write("date:"+dateTF.getValue());
+            writer.close();
+            alertL.setText("export report for archiving");
         }
 
 

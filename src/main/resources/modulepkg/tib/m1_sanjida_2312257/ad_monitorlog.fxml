@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="modulepkg.tib.m1_sanjida_2312257.AdMonitorlogController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="489.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.AdMonitorlogController">
+   <children>
+      <Label layoutX="226.0" layoutY="23.0" text="Access Monitor System ">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Line endX="111.33331298828125" endY="-3.814697265625E-6" layoutX="338.0" layoutY="51.0" startX="-118.0" startY="-3.814697265625E-6" />
+      <TableView fx:id="monitorTV" layoutX="143.0" layoutY="109.0" prefHeight="200.0" prefWidth="435.0">
+        <columns>
+          <TableColumn fx:id="idcol" prefWidth="135.99999618530273" text="User Id" />
+          <TableColumn fx:id="datecol" prefWidth="154.00001525878906" text="Date" />
+            <TableColumn fx:id="activitycol" prefWidth="143.99993896484375" text="Activity" />
+        </columns>
+      </TableView>
+      <TextField fx:id="idTF" layoutX="226.0" layoutY="327.0" />
+      <TextField fx:id="dateTF" layoutX="229.0" layoutY="363.0" />
+      <Label layoutX="166.0" layoutY="331.0" text="User Id" />
+      <Label layoutX="172.0" layoutY="367.0" text="Date" />
+      <Button layoutX="229.0" layoutY="404.0" mnemonicParsing="false" onAction="#filter" text="Filter" />
+      <Button layoutX="338.0" layoutY="404.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
+      <Button layoutX="20.0" layoutY="449.0" mnemonicParsing="false" onAction="#back" text="Back" />
+   </children>
 </AnchorPane>

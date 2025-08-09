@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import modulepkg.tib.common.SceneSwitcher;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -19,9 +20,6 @@ public class TrackreportupdateController {
     private Label alertlabel;
     @FXML
     private TextField descriptionTF;
-
-    @FXML
-    ArrayList<Trackreportupdate> trackreportupdatelist = new ArrayList<>();
 
     public void initialize() {
         statusCB.getItems().addAll("In Progress", "Reviewed");
@@ -67,6 +65,11 @@ public class TrackreportupdateController {
                 alertlabel.setText("Failed to save data.");
             }
         }
+
+    @FXML
+    public void Back(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/trackreport");}
+
 }
 
 

@@ -39,7 +39,7 @@ public class IoDashboardController {
 
     @FXML
     void investigationButton(ActionEvent actionEvent)  throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/investigation_reportview");
+        SceneSwitcher.switchTo("m1_sanjida_2312257/investigation_reportnew");
 
     }
 

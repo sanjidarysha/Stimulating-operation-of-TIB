@@ -75,10 +75,6 @@ public class AdAssigncasesController
         }
     }
 
-    @FXML
-    public void next(ActionEvent actionEvent) throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_reviewreport");
-    }
 
     @FXML
     public void back(ActionEvent actionEvent) throws IOException {

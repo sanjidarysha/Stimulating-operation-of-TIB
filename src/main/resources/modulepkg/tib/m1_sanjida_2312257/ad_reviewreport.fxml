@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="527.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.AdReviewreportController">
    <children>
       <Label fx:id="alertL" layoutX="337.0" layoutY="405.0" text="warning label">
@@ -38,7 +37,6 @@
       <Button layoutX="443.0" layoutY="359.0" mnemonicParsing="false" onAction="#update" text="Update" />
       <Button layoutX="543.0" layoutY="359.0" mnemonicParsing="false" onAction="#export" text="Export" />
       <Button layoutX="14.0" layoutY="489.0" mnemonicParsing="false" onAction="#back" text="Back" />
-      <Button layoutX="621.0" layoutY="489.0" mnemonicParsing="false" onAction="#next" text="Next" />
       <TableView fx:id="tableview" layoutX="67.0" layoutY="115.0" prefHeight="149.0" prefWidth="539.0">
         <columns>
           <TableColumn fx:id="idcol" prefWidth="125.99999237060547" text="Organizational Id" />

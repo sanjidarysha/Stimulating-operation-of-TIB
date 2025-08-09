@@ -5,11 +5,12 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import modulepkg.tib.common.SceneSwitcher;
 
-import java.time.LocalDate;
+import java.io.IOException;
 import java.util.ArrayList;
 
-public class InvestigationReportviewController
+public class InvestigationReportnewController
 {
     @javafx.fxml.FXML
     private TextArea descriptionArea;
@@ -54,4 +55,8 @@ public class InvestigationReportviewController
 
     }
 
-    }
+    @javafx.fxml.FXML
+    public void back(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/io_dashboard");}
+
+}

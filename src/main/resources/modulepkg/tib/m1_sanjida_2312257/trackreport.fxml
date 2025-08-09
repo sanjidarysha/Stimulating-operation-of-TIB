@@ -31,5 +31,6 @@
       <Label fx:id="alertlabel" layoutX="440.0" layoutY="416.0" text="warning label" textFill="PURPLE" />
       <Line endX="501.6666259765625" layoutX="125.0" layoutY="306.0" startX="-100.0" />
       <Line endX="100.0" layoutX="328.0" layoutY="60.0" startX="-100.0" />
+      <Button layoutX="15.0" layoutY="494.0" mnemonicParsing="false" onAction="#back" text="Back" />
    </children>
 </AnchorPane>
