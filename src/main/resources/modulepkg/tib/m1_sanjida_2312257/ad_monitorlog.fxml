@@ -9,7 +9,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="489.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.AdMonitorlogController">
    <children>
       <Label layoutX="226.0" layoutY="23.0" text="Access Monitor System ">
@@ -21,7 +20,7 @@
       <TableView fx:id="monitorTV" layoutX="143.0" layoutY="109.0" prefHeight="200.0" prefWidth="435.0">
         <columns>
           <TableColumn fx:id="idcol" prefWidth="135.99999618530273" text="User Id" />
-          <TableColumn fx:id="datecol" prefWidth="154.00001525878906" text="Date" />
+          <TableColumn fx:id="dateCol" prefWidth="154.00001525878906" text="Date" />
             <TableColumn fx:id="activitycol" prefWidth="143.99993896484375" text="Activity" />
         </columns>
       </TableView>
@@ -32,5 +31,6 @@
       <Button layoutX="229.0" layoutY="404.0" mnemonicParsing="false" onAction="#filter" text="Filter" />
       <Button layoutX="338.0" layoutY="404.0" mnemonicParsing="false" onAction="#reset" text="Reset" />
       <Button layoutX="20.0" layoutY="449.0" mnemonicParsing="false" onAction="#back" text="Back" />
+      <Label fx:id="label" layoutX="436.0" layoutY="314.0" prefHeight="34.0" prefWidth="141.0" text="warning" />
    </children>
 </AnchorPane>

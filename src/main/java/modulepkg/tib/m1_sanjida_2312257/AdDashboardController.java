@@ -20,8 +20,8 @@ public class AdDashboardController {
 
 
     @FXML
-    void budgetButton(ActionEvent event) {
-
+    void budgetButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_budget");
     }
 
     @FXML
@@ -75,8 +75,8 @@ public class AdDashboardController {
     }
 
     @FXML
-    void systemLogsButton(ActionEvent event) {
-
+    void systemLogsButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_monitorlog");
     }
 
     @FXML
