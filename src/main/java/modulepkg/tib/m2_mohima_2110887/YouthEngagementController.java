@@ -1,4 +1,4 @@
-package modulepkg.tib.m1_mohima_2110887;
+package modulepkg.tib.m2_mohima_2110887;
 
 import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
