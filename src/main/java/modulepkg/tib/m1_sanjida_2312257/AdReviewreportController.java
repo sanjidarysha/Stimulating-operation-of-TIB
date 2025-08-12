@@ -96,7 +96,7 @@ public class AdReviewreportController {
         tableview.getItems().clear();
         tableview.refresh();
         tableview.getItems().addAll(reviewlist);
-        alertL.setText("updated data saved succcessfully");
+        alertL.setText("updated data  succcessfully");
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("ad_reviewreport.bin"));
         oos.writeObject(reviewlist);
         oos.close();
