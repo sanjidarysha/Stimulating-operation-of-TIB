@@ -11,5 +11,7 @@ module modulepkg.tib {
     opens modulepkg.tib.m1_mohima_2110887 to javafx.fxml;
     exports modulepkg.tib.common;
     opens modulepkg.tib.common to javafx.fxml;
+    exports modulepkg.tib.Mannaf_2110279;
+    opens modulepkg.tib.Mannaf_2110279 to javafx.fxml, javafx.base;
 
 }
