@@ -5,26 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="536.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.CollaborateexternalController">
    <children>
-      <Text layoutX="23.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chooose partner" wrappingWidth="104.13671875" />
-      <ComboBox fx:id="choosepartnerCB" layoutX="142.0" layoutY="109.0" prefWidth="150.0" />
-      <Text layoutX="29.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" wrappingWidth="76.13671875" />
-      <TextField fx:id="subjectTF" layoutX="142.0" layoutY="161.0" />
-      <TextArea fx:id="messageTA" layoutX="142.0" layoutY="213.0" prefHeight="179.0" prefWidth="465.0" />
-      <Button layoutX="529.0" layoutY="416.0" mnemonicParsing="false" onAction="#send" prefHeight="25.0" prefWidth="76.0" text="Send" />
-      <Button layoutX="142.0" layoutY="416.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="76.0" text="back" />
+      <Text layoutX="35.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Chooose partner" wrappingWidth="104.13671875" />
+      <ComboBox fx:id="choosepartnerCB" layoutX="151.0" layoutY="129.0" prefWidth="150.0" />
+      <Text layoutX="64.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Subject" wrappingWidth="76.13671875" />
+      <TextField fx:id="subjectTF" layoutX="151.0" layoutY="203.0" />
+      <TextArea fx:id="messageTA" layoutX="148.0" layoutY="243.0" prefHeight="179.0" prefWidth="465.0" />
+      <Button layoutX="552.0" layoutY="441.0" mnemonicParsing="false" onAction="#send" prefHeight="25.0" prefWidth="76.0" text="Send" />
+      <Button layoutX="141.0" layoutY="441.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="76.0" text="back" />
       <Label layoutX="240.0" layoutY="50.0" prefHeight="27.0" prefWidth="209.0" text="External Collaboration">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="100.0" layoutX="326.0" layoutY="77.0" startX="-100.0" />
+      <TextField fx:id="Labname" layoutX="492.0" layoutY="108.0" prefHeight="25.0" prefWidth="65.0" promptText="email" />
+      <Label fx:id="alertlabel" layoutX="334.0" layoutY="432.0" text="warning label" />
+      <TextField fx:id="toTF" layoutX="151.0" layoutY="168.0" />
+      <Text layoutX="64.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To" wrappingWidth="76.13671875" />
+      <ImageView layoutX="449.0" layoutY="111.0">
+         <image>
+            <Image url="@../image/Mail.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

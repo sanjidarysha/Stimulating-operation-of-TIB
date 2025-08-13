@@ -8,10 +8,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="513.0" prefWidth="644.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.m1_sanjida_2312257.MaintainevidenceController">
    <children>
-      <TableView fx:id="evidenceTableView" layoutX="21.0" layoutY="206.0" prefHeight="200.0" prefWidth="601.0">
+      <TableView fx:id="evidenceTableView" layoutX="21.0" layoutY="206.0" prefHeight="200.0" prefWidth="600.0">
         <columns>
           <TableColumn fx:id="itemColumn" prefWidth="118.66665649414062" text="Item description" />
           <TableColumn fx:id="evidenceIdColumn" prefWidth="112.0" text="Evidence Id" />
@@ -20,13 +19,14 @@
             <TableColumn fx:id="statusColumn" prefWidth="92.0" text="status" />
         </columns>
       </TableView>
-      <Button layoutX="14.0" layoutY="446.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="61.0" text="Back" />
-      <Button layoutX="532.0" layoutY="459.0" mnemonicParsing="false" onAction="#updatestatus" text="Update status" />
+      <Button layoutX="21.0" layoutY="420.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="61.0" text="Back" />
+      <Button layoutX="532.0" layoutY="433.0" mnemonicParsing="false" onAction="#updatestatus" text="Update status" />
       <Label layoutX="282.0" layoutY="99.0" prefHeight="17.0" prefWidth="80.0" text="Evidence">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Line endX="48.0" layoutX="346.0" layoutY="137.0" startX="-100.0" />
+      <Label fx:id="alertlabel" layoutX="549.0" layoutY="471.0" text="warning label" />
    </children>
 </AnchorPane>

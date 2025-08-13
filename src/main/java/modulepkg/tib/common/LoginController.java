@@ -51,6 +51,16 @@ public class LoginController {
         case "General Public":
             SceneSwitcher.switchTo("m1_mohima_2110887/GeneralPublicdashboard");
             break;
+
+
+       case "Research Officer":
+            SceneSwitcher.switchTo("miraz_2222649/researchOfficer/researchOfficer");
+            break;
+
+       case "Policy Analyst":
+           SceneSwitcher.switchTo("miraz_2222649/policyAnalyst/policyAnalyst");
+           break;
+
     }
 
 }
@@ -63,7 +73,7 @@ public class LoginController {
     void initialize(){
         roleComboBox.getItems().addAll("Investigation Officer","Admin",
                                             "CCC","General Public",
-                                            "Monitoring Officer","Policy Analyst",
+                                            "Research Officer","Policy Analyst",
                                             "Office Inventory Manager","Finance Officer");
     }
 }

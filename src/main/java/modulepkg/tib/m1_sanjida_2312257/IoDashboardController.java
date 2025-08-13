@@ -19,14 +19,15 @@ public class IoDashboardController {
     private Label labelName;
 
     @FXML
-    void assignedInvestigationButton(ActionEvent event){
+    void assignedInvestigationButton(ActionEvent event)throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/assignedinvestigation");
     }
 
 
 
     @FXML
-    void evidenceButton(ActionEvent event) {
-
+    void evidenceButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/maintainevidence");
     }
 
     @FXML
@@ -38,7 +39,7 @@ public class IoDashboardController {
 
     @FXML
     void investigationButton(ActionEvent actionEvent)  throws IOException {
-        SceneSwitcher.switchTo("m1_sanjida_2312257/investigation_reportview");
+        SceneSwitcher.switchTo("m1_sanjida_2312257/investigation_reportnew");
 
     }
 
@@ -61,9 +62,10 @@ public class IoDashboardController {
     }
 
     @FXML
-    void previousInvestigationButton(ActionEvent event) {
-
+    void previousInvestigationButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/reviewpreviousReport");
     }
+
 
     @FXML
     void profileButton(MouseEvent event) throws IOException {
@@ -72,7 +74,8 @@ public class IoDashboardController {
     }
 
     @FXML
-    void publiccomplaintButton(ActionEvent event) {
+    void publiccomplaintButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/reviewpubliccomplaint");
 
     }
 
@@ -84,9 +87,10 @@ public class IoDashboardController {
 
 
     @FXML
-    void witnessButton(ActionEvent event) {
-
+    void witnessButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/managewitness");
     }
+
 
     @FXML
     public void initialize() {

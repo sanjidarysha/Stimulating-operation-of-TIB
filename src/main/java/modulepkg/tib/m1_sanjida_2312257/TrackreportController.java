@@ -48,4 +48,9 @@ public class TrackreportController
     public void updatenote(ActionEvent actionEvent) throws IOException {
         SceneSwitcher.switchTo("m1_sanjida_2312257/trackreportupdate");
     }
+
+    @javafx.fxml.FXML
+    public void back(ActionEvent actionEvent) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/io_dashboard");}
+
 }
