@@ -70,9 +70,11 @@ public class AdDashboardController {
     }
 
     @FXML
-    void securityButton(ActionEvent event) {
-
+    void securityButton(ActionEvent event)  throws IOException{
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_updatesettings");
     }
+
+
 
     @FXML
     void systemLogsButton(ActionEvent event) throws IOException{
