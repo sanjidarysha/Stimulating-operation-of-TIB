@@ -1,0 +1,10 @@
+choose partner:Investigator
+To:Sanjida
+subject:Follow-up on Case C1002
+message:Dear sir,
+I hope you are well.
+I have given you a short reminder on the case handling Id:C1002.Please follow-up
+on this case and please give update on this case handling immediately.
+Thank you for your attention
+Rysha,Admin 
+...............
