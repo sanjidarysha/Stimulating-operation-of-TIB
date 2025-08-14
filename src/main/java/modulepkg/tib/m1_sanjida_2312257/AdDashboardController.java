@@ -25,9 +25,11 @@ public class AdDashboardController {
     }
 
     @FXML
-    void communicateOfficerButton(ActionEvent event) {
-
+    void communicateOfficerButton(ActionEvent event) throws IOException {
+        SceneSwitcher.switchTo("m1_sanjida_2312257/ad_communicateofficer");
     }
+
+
 
     @FXML
     void investigationReportButton(ActionEvent event) throws IOException{
