@@ -47,7 +47,7 @@ public class AdCommunicateofficerController
         writer.write("message:"+messegeTA.getText()+"\n");
         writer.write("...............\n");
         writer.close();
-        label.setText("message saved to txt file");
+        label.setText("message saved to txt file successfully");
 
         chooseCB.setValue(null);
         toTF.clear();
