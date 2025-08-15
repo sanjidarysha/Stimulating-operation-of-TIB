@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="553.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.ManageBankTransactionsController">
+   <children>
+      <Label layoutX="56.0" layoutY="40.0" text="Bank Transaction" />
+      <ImageView fx:id="bankTransactionIV" fitHeight="100.0" fitWidth="170.0" layoutX="172.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="56.0" layoutY="151.0" text="Transaction Type" />
+      <Label layoutX="56.0" layoutY="219.0" text="Amount" />
+      <Label layoutX="56.0" layoutY="285.0" text="Bank Slip" />
+      <Label layoutX="56.0" layoutY="355.0" text="Account Number (new)" />
+      <Label layoutX="56.0" layoutY="422.0" text="Transaction Date (new)" />
+      <ComboBox fx:id="transactiontypeCB" layoutX="164.0" layoutY="147.0" prefWidth="150.0" />
+      <TextField fx:id="amountTF" layoutX="165.0" layoutY="207.0" />
+      <TextField fx:id="accountNumberTF" layoutX="193.0" layoutY="351.0" />
+      <DatePicker fx:id="transactiondateDP" layoutX="186.0" layoutY="418.0" />
+      <Button layoutX="179.0" layoutY="281.0" mnemonicParsing="false" onAction="#bankslipOA" text="Button" />
+      <Button layoutX="309.0" layoutY="485.0" mnemonicParsing="false" onAction="#submitOA" text="Submit" />
+      <Button layoutX="47.0" layoutY="485.0" mnemonicParsing="false" onAction="#cancelOA" text="Cancel" />
+   </children>
+</AnchorPane>
