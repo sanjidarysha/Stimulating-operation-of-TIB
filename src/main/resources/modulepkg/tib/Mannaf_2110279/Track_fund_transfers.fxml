@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="526.0" prefWidth="751.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.TrackFundTransfersController">
+   <children>
+      <Label layoutX="182.0" layoutY="37.0" text="Track Fund Transfers">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="104.0" text="Sender Department" />
+      <Label layoutX="60.0" layoutY="155.0" text="Receiver Department" />
+      <Label layoutX="60.0" layoutY="212.0" text="Amount" />
+      <Label layoutX="60.0" layoutY="268.0" text="Note" />
+      <Label layoutX="60.0" layoutY="322.0" text="Transfer Date (New)" />
+      <Label layoutX="60.0" layoutY="375.0" prefHeight="18.0" prefWidth="0.0" />
+      <Label layoutX="59.0" layoutY="375.0" text="Reference ID (New)" />
+      <ComboBox fx:id="senderDepartmentCB" layoutX="216.0" layoutY="100.0" prefWidth="150.0" />
+      <ComboBox fx:id="ReceiverDepartmentCB" layoutX="216.0" layoutY="151.0" prefWidth="150.0" />
+      <TextField fx:id="amountTF" layoutX="217.0" layoutY="208.0" />
+      <TextArea fx:id="noteTA" layoutX="217.0" layoutY="246.0" prefHeight="50.0" prefWidth="170.0" />
+      <TextField fx:id="referenceIDnewTF" layoutX="217.0" layoutY="371.0" />
+      <DatePicker fx:id="transferDateNewDP" layoutX="205.0" layoutY="318.0" />
+      <Button layoutX="375.0" layoutY="432.0" mnemonicParsing="false" onAction="#confirmTransferOA" text="Confirm Transfer" />
+   </children>
+</AnchorPane>
