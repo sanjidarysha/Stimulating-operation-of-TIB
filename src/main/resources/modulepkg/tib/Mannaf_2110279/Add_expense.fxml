@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="553.0" prefWidth="778.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.AddExpenseController">
+   <children>
+      <Label layoutX="50.0" layoutY="54.0" text="Add New Expense" />
+      <ImageView fx:id="addnewexpenseIV" fitHeight="101.0" fitWidth="197.0" layoutX="162.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="28.0" layoutY="152.0" text="Expense Type" />
+      <Label layoutX="50.0" layoutY="192.0" text="Amount" />
+      <Label layoutX="50.0" layoutY="238.0" text="Reason" />
+      <Label layoutX="24.0" layoutY="285.0" text="Payment Method" />
+      <Label layoutX="50.0" layoutY="331.0" text="Date (New)" />
+      <ComboBox fx:id="expensetypeCB" layoutX="126.0" layoutY="148.0" prefWidth="150.0" />
+      <Spinner fx:id="amountSpinner" layoutX="127.0" layoutY="188.0" />
+      <TextArea fx:id="reasonTA" layoutX="126.0" layoutY="225.0" prefHeight="44.0" prefWidth="165.0" />
+      <ComboBox fx:id="paymentmethodCB" layoutX="126.0" layoutY="281.0" prefWidth="150.0" />
+      <DatePicker fx:id="dateDP" layoutX="115.0" layoutY="327.0" />
+      <Button layoutX="264.0" layoutY="374.0" mnemonicParsing="false" onAction="#uploadReceiptOA" text="Upload Receipt" />
+      <Button layoutX="313.0" layoutY="441.0" mnemonicParsing="false" onAction="#submitOA" text="Submit" />
+      <Button layoutX="411.0" layoutY="441.0" mnemonicParsing="false" onAction="#cancelOA" text="Cancel" />
+   </children>
+</AnchorPane>
