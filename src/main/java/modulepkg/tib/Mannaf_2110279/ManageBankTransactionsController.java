@@ -31,7 +31,11 @@ public class ManageBankTransactionsController
     public void submitOA(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @Deprecated
     public void bankslipOA(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void viewReceiptOA(ActionEvent actionEvent) {
     }
 }
