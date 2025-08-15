@@ -1,14 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="modulepkg.tib.Mannaf_2110279.MonitorPaymentDeadlinesController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="542.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.MonitorPaymentDeadlinesController">
+   <children>
+      <Label layoutX="300.0" layoutY="44.0" text="Upcoming Payments">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <TableView fx:id="paymentTV" layoutX="51.0" layoutY="115.0" prefHeight="200.0" prefWidth="738.0">
+        <columns>
+          <TableColumn fx:id="paymentIDcolumn" prefWidth="128.00000762939453" text="Payment ID" />
+          <TableColumn fx:id="vendorColumn" prefWidth="100.800048828125" text="Vendor" />
+            <TableColumn fx:id="amountColumn" prefWidth="100.800048828125" text="Amount" />
+            <TableColumn fx:id="dueDateColumn" prefWidth="100.800048828125" text="Due Date" />
+            <TableColumn fx:id="statusColumn" prefWidth="100.800048828125" text="Status" />
+            <TableColumn fx:id="reminderSetNewColumn" prefWidth="100.800048828125" text="Reminder Set (New)" />
+            <TableColumn fx:id="paymentTypeNewColumn" prefWidth="100.800048828125" text="Payment Type(New)" />
+        </columns>
+      </TableView>
+      <CheckBox fx:id="addReminderCB" layoutX="51.0" layoutY="348.0" mnemonicParsing="false" text="Add Reminder" />
+      <Button layoutX="586.0" layoutY="395.0" mnemonicParsing="false" onAction="#doneOA" text="Mark as Done" />
+      <Button layoutX="713.0" layoutY="395.0" mnemonicParsing="false" onAction="#exportOA" text="Export" />
+   </children>
 </AnchorPane>
