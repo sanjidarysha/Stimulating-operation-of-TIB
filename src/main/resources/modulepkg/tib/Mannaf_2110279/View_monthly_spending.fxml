@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="538.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.ViewMonthlySpendingController">
+   <children>
+      <Label layoutX="36.0" layoutY="51.0" text="Month" />
+      <Label layoutX="36.0" layoutY="105.0" text="Year" />
+      <ComboBox fx:id="monthCB" layoutX="112.0" layoutY="47.0" prefWidth="150.0" />
+      <ComboBox fx:id="yearCB" layoutX="112.0" layoutY="101.0" prefWidth="150.0" />
+      <Button layoutX="248.0" layoutY="153.0" mnemonicParsing="false" onAction="#viewOA" text="View" />
+      <TableView fx:id="reportTV" layoutX="64.0" layoutY="222.0" prefHeight="200.0" prefWidth="663.0">
+        <columns>
+          <TableColumn fx:id="catagoryColumn" prefWidth="142.40003204345703" text="Catagory" />
+          <TableColumn fx:id="amountSpentColumn" prefWidth="129.5999755859375" text="Amount Spent" />
+            <TableColumn fx:id="givenBudgetColumn" prefWidth="129.5999755859375" text="Given Bugdet" />
+            <TableColumn fx:id="differenceColumn" prefWidth="129.5999755859375" text="Difference" />
+            <TableColumn fx:id="noteColumn" prefWidth="129.5999755859375" text="Note" />
+        </columns>
+      </TableView>
+      <Button layoutX="488.0" layoutY="446.0" mnemonicParsing="false" onAction="#exportPDFOA" text="Export PDF" />
+      <Button layoutX="602.0" layoutY="446.0" mnemonicParsing="false" onAction="#exportExcelOA" text="Export Excel" />
+      <Button layoutX="711.0" layoutY="446.0" mnemonicParsing="false" onAction="#shareReportOA" text="Share Report" />
+   </children>
+</AnchorPane>
