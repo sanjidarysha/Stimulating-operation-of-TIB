@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="693.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.ApproveSampleRequestsController">
+   <children>
+      <Label layoutX="58.0" layoutY="72.0" text="Approve Sample Requests" />
+      <ImageView fx:id="approveSampleReqIV" fitHeight="116.0" fitWidth="150.0" layoutX="205.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="58.0" layoutY="239.0" text="Pending simple requests" />
+      <ListView fx:id="pendingSamplereqLV" layoutX="197.0" layoutY="195.0" prefHeight="123.0" prefWidth="208.0" />
+      <TableView fx:id="detailTV" layoutX="115.0" layoutY="340.0" prefHeight="200.0" prefWidth="630.0">
+        <columns>
+          <TableColumn fx:id="nameColumn" prefWidth="136.80001068115234" text="Name" />
+          <TableColumn fx:id="itemColumn" prefWidth="122.39996337890625" text="Item" />
+            <TableColumn fx:id="reasonColumn" prefWidth="122.39996337890625" text="Reason" />
+            <TableColumn fx:id="quantityColumn" prefWidth="122.39996337890625" text="Quantity (New)" />
+            <TableColumn fx:id="requestDateColumn" prefWidth="122.39996337890625" text="Request Date (New)" />
+        </columns>
+      </TableView>
+      <Button layoutX="649.0" layoutY="564.0" mnemonicParsing="false" onAction="#approveOA" text="Approve" />
+      <Button layoutX="752.0" layoutY="564.0" mnemonicParsing="false" onAction="#rejectOA" text="Reject" />
+      <Label layoutX="72.0" layoutY="612.0" text="Note" />
+      <TextArea fx:id="noteTA" layoutX="115.0" layoutY="579.0" prefHeight="82.0" prefWidth="240.0" />
+   </children>
+</AnchorPane>
