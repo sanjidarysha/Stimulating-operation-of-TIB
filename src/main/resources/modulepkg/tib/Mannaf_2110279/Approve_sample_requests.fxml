@@ -9,7 +9,6 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="693.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.ApproveSampleRequestsController">
    <children>
       <Label layoutX="58.0" layoutY="72.0" text="Approve Sample Requests" />
