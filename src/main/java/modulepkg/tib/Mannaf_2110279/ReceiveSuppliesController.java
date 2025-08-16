@@ -1,59 +1,57 @@
 package modulepkg.tib.Mannaf_2110279;
 
-import com.sun.javafx.charts.Legend;
 import javafx.event.ActionEvent;
-import javafx.scene.control.Alert;
+import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class ReceiveSuppliesController
-{
-    @javafx.fxml.FXML
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReceiveSuppliesController {
+
+    @FXML
     private TextField itemNameTf;
-    @javafx.fxml.FXML
-    private TextField supplierContactTF;
-    @javafx.fxml.FXML
-    private TextField unitPriceTF;
-    @javafx.fxml.FXML
-    private TextField sourceTF;
-    @javafx.fxml.FXML
-    private DatePicker dateDP;
-    @javafx.fxml.FXML
+    @FXML
     private TextField quantityTF;
+    @FXML
+    private TextField sourceTF;
+    @FXML
+    private TextField supplierContactTF;
+    @FXML
+    private TextField unitPriceTF;
+    @FXML
+    private DatePicker dateDP;
 
-    @javafx.fxml.FXML
+    private List<Supply> supplyList = new ArrayList<>();
+
+    @FXML
     public void initialize() {
+        itemNameTf.setText("Notebook");
+        quantityTF.setText("100");
+        sourceTF.setText("Local Supplier");
+        supplierContactTF.setText("017xxxxxxxx");
+        unitPriceTF.setText("50");
+        dateDP.setValue(LocalDate.now());
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void saveOA(ActionEvent actionEvent) {
-        try {
-            ReceiveSupplies supply = new ReceiveSupplies(
-                    itemNameTf.getText(),
-                    Integer.parseInt(quantityTF.getText()),
-                    sourceTF.getText(),
-                    supplierContactTF.getText(),
-                    Double.parseDouble(unitPriceTF.getText()),
-                    dateDP.getValue()
-            );
-            System.out.println("Saved Data: " + supply.toString());
+        String itemName = itemNameTf.getText();
+        int quantity = Integer.parseInt(quantityTF.getText());
+        String source = sourceTF.getText();
+        String supplierContact = supplierContactTF.getText();
+        double unitPrice = Double.parseDouble(unitPriceTF.getText());
+        LocalDate date = dateDP.getValue();
 
-            Alert alert = new Alert(AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Supply data saved successfully!");
-            alert.showAndWait();
+        Supply supply = new Supply(itemName, quantity, source, supplierContact, unitPrice, date);
+        supplyList.add(supply);
 
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Quantity and Unit Price must be numeric!");
-            alert.showAndWait();
-        }
+        System.out.println("Saved: " + supply);
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void resetOA(ActionEvent actionEvent) {
         itemNameTf.clear();
         quantityTF.clear();
@@ -61,11 +59,5 @@ public class ReceiveSuppliesController
         supplierContactTF.clear();
         unitPriceTF.clear();
         dateDP.setValue(null);
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Reset");
-        alert.setHeaderText(null);
-        alert.setContentText("Form has been reset.");
-        alert.showAndWait();
     }
 }
