@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.time.LocalDate;
 
@@ -34,17 +33,11 @@ public class ApproveBudgetRequestsController {
 
     @FXML
     public void initialize() {
-        requestIDColumn.setCellValueFactory(new PropertyValueFactory<>("requestID"));
-        departmentColumn.setCellValueFactory(new PropertyValueFactory<>("department"));
-        requestedAmountColumn.setCellValueFactory(new PropertyValueFactory<>("requestedAmount"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<>("status"));
-        requestdateColumn.setCellValueFactory(new PropertyValueFactory<>("requestDate"));
-        approvedAmountColumn.setCellValueFactory(new PropertyValueFactory<>("approvedAmount"));
-        priorityLevelColumn.setCellValueFactory(new PropertyValueFactory<>("priorityLevel"));
-
-        requestList.add(new BudgetRequest("REQ001", "HR", 1500, "Pending", LocalDate.now(), 0, "High"));
-        requestList.add(new BudgetRequest("REQ002", "IT", 3000, "Pending", LocalDate.now(), 0, "Medium"));
-
+        requestList.addAll(
+                new BudgetRequest("BR001", "HR", 5000.0, "Pending", LocalDate.now().minusDays(3), 0.0, "High"),
+                new BudgetRequest("BR002", "Finance", 3000.0, "Pending", LocalDate.now().minusDays(2), 0.0, "Medium"),
+                new BudgetRequest("BR003", "IT", 8000.0, "Pending", LocalDate.now().minusDays(1), 0.0, "High")
+        );
         budgetreqTV.setItems(requestList);
     }
 
@@ -58,10 +51,8 @@ public class ApproveBudgetRequestsController {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Approved");
             alert.setHeaderText(null);
-            alert.setContentText("Budget request " + selected.getRequestID() + " approved.");
+            alert.setContentText("Request " + selected.getRequestID() + " approved.");
             alert.showAndWait();
-        } else {
-            showSelectAlert();
         }
     }
 
@@ -70,23 +61,12 @@ public class ApproveBudgetRequestsController {
         BudgetRequest selected = budgetreqTV.getSelectionModel().getSelectedItem();
         if (selected != null) {
             selected.setStatus("Rejected");
-            selected.setApprovedAmount(0);
             budgetreqTV.refresh();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Rejected");
             alert.setHeaderText(null);
-            alert.setContentText("Budget request " + selected.getRequestID() + " rejected.");
+            alert.setContentText("Request " + selected.getRequestID() + " rejected.");
             alert.showAndWait();
-        } else {
-            showSelectAlert();
         }
-    }
-
-    private void showSelectAlert() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("No Selection");
-        alert.setHeaderText(null);
-        alert.setContentText("Please select a budget request from the table first.");
-        alert.showAndWait();
     }
 }
