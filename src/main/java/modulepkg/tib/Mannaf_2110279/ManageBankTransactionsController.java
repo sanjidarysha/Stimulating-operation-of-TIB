@@ -1,41 +1,71 @@
 package modulepkg.tib.Mannaf_2110279;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
-public class ManageBankTransactionsController
-{
-    @javafx.fxml.FXML
+import java.time.LocalDate;
+
+public class ManageBankTransactionsController {
+
+    @FXML
     private ImageView bankTransactionIV;
-    @javafx.fxml.FXML
+    @FXML
     private TextField accountNumberTF;
-    @javafx.fxml.FXML
-    private ComboBox transactiontypeCB;
-    @javafx.fxml.FXML
+    @FXML
+    private ComboBox<String> transactiontypeCB;
+    @FXML
     private DatePicker transactiondateDP;
-    @javafx.fxml.FXML
+    @FXML
     private TextField amountTF;
 
-    @javafx.fxml.FXML
+    private ObservableList<BankTransaction> transactionList = FXCollections.observableArrayList();
+
+    @FXML
     public void initialize() {
+        transactiontypeCB.setItems(FXCollections.observableArrayList("Deposit", "Withdraw", "Transfer", "Payment"));
+        transactiontypeCB.getSelectionModel().selectFirst();
+
+        amountTF.setText("1000");
+        accountNumberTF.setText("0123456789");
+        transactiondateDP.setValue(LocalDate.now());
+
+        transactionList.addAll(
+                new BankTransaction("Deposit", 5000, "01711223344", LocalDate.of(2025, 8, 10), "Slip001"),
+                new BankTransaction("Withdraw", 2000, "01999887766", LocalDate.of(2025, 8, 11), "Slip002"),
+                new BankTransaction("Transfer", 1500, "01888776655", LocalDate.of(2025, 8, 12), "Slip003")
+        );
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void cancelOA(ActionEvent actionEvent) {
+        transactiontypeCB.getSelectionModel().selectFirst();
+        amountTF.clear();
+        accountNumberTF.clear();
+        transactiondateDP.setValue(LocalDate.now());
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void submitOA(ActionEvent actionEvent) {
+        BankTransaction transaction = new BankTransaction(
+                transactiontypeCB.getValue(),
+                Double.parseDouble(amountTF.getText()),
+                accountNumberTF.getText(),
+                transactiondateDP.getValue(),
+                "SlipUploaded"
+        );
+        transactionList.add(transaction);
+        System.out.println("Transaction added: " + transaction);
     }
 
-    @Deprecated
-    public void bankslipOA(ActionEvent actionEvent) {
-    }
-
-    @javafx.fxml.FXML
+    @FXML
     public void viewReceiptOA(ActionEvent actionEvent) {
+        System.out.println("Viewing bank slip for last transaction: " +
+                (transactionList.isEmpty() ? "No transactions" : transactionList.get(transactionList.size() - 1)));
     }
 }
