@@ -7,16 +7,12 @@ public class StaffRequest {
     private String item;
     private int quantity;
     private LocalDate date;
-    private String comments;
-    private String status;
 
-    public StaffRequest(String employeeName, String item, int quantity, LocalDate date, String comments, String status) {
+    public StaffRequest(String employeeName, String item, int quantity, LocalDate date) {
         this.employeeName = employeeName;
         this.item = item;
         this.quantity = quantity;
         this.date = date;
-        this.comments = comments;
-        this.status = status;
     }
 
     public String getEmployeeName() { return employeeName; }
@@ -31,12 +27,6 @@ public class StaffRequest {
     public LocalDate getDate() { return date; }
     public void setDate(LocalDate date) { this.date = date; }
 
-    public String getComments() { return comments; }
-    public void setComments(String comments) { this.comments = comments; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-
     @Override
     public String toString() {
         return "StaffRequest{" +
@@ -44,9 +34,6 @@ public class StaffRequest {
                 ", item='" + item + '\'' +
                 ", quantity=" + quantity +
                 ", date=" + date +
-                ", comments='" + comments + '\'' +
-                ", status='" + status + '\'' +
                 '}';
     }
 }
-//final commit//

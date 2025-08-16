@@ -4,11 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.*;
 
 import java.time.LocalDate;
 
@@ -27,36 +23,30 @@ public class ApproveRequestsController {
     @FXML
     private TextArea commentsTA;
 
-    private ObservableList<StaffRequest> requestList = FXCollections.observableArrayList();
+    private ObservableList<StaffRequest> staffRequestList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        employeenameColumn.setCellValueFactory(new PropertyValueFactory<>("employeeName"));
-        itemColumn.setCellValueFactory(new PropertyValueFactory<>("item"));
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("date"));
+        staffRequestList.addAll(
+                new StaffRequest("Rahim", "Notebook", 5, LocalDate.now().minusDays(2)),
+                new StaffRequest("Karima", "Pen", 10, LocalDate.now().minusDays(1)),
+                new StaffRequest("Sumi", "Marker", 3, LocalDate.now())
+        );
 
-        requestList.add(new StaffRequest("John Doe", "Laptop", 1, LocalDate.now(), "", "Pending"));
-        requestList.add(new StaffRequest("Jane Smith", "Chair", 2, LocalDate.now(), "", "Pending"));
-
-        staffReqTV.setItems(requestList);
+        staffReqTV.setItems(staffRequestList);
     }
 
     @FXML
     public void approveOA(ActionEvent actionEvent) {
         StaffRequest selected = staffReqTV.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            selected.setStatus("Approved");
-            selected.setComments(commentsTA.getText());
-            staffReqTV.refresh();
-
+            staffRequestList.remove(selected);
+            commentsTA.clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Approved");
             alert.setHeaderText(null);
-            alert.setContentText("Request by " + selected.getEmployeeName() + " approved.");
+            alert.setContentText("Request of " + selected.getEmployeeName() + " approved.");
             alert.showAndWait();
-        } else {
-            showSelectAlert();
         }
     }
 
@@ -64,26 +54,13 @@ public class ApproveRequestsController {
     public void rejectOA(ActionEvent actionEvent) {
         StaffRequest selected = staffReqTV.getSelectionModel().getSelectedItem();
         if (selected != null) {
-            selected.setStatus("Rejected");
-            selected.setComments(commentsTA.getText());
-            staffReqTV.refresh();
-
+            staffRequestList.remove(selected);
+            commentsTA.clear();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Rejected");
             alert.setHeaderText(null);
-            alert.setContentText("Request by " + selected.getEmployeeName() + " rejected.");
+            alert.setContentText("Request of " + selected.getEmployeeName() + " rejected.");
             alert.showAndWait();
-        } else {
-            showSelectAlert();
         }
     }
-
-    private void showSelectAlert() {
-        Alert alert = new Alert(Alert.AlertType.WARNING);
-        alert.setTitle("No Selection");
-        alert.setHeaderText(null);
-        alert.setContentText("Please select a request from the table first.");
-        alert.showAndWait();
-    }
 }
-//final commit//
