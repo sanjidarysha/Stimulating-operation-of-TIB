@@ -1,13 +1,13 @@
 package modulepkg.tib.Mannaf_2110279;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Spinner;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+
+import java.time.LocalDate;
 
 public class AddExpenseController {
 
@@ -24,63 +24,57 @@ public class AddExpenseController {
     @FXML
     private ComboBox<String> paymentmethodCB;
 
-    private String receiptPath = ""; // optional path of uploaded receipt
+    private ObservableList<Expense> expenseList = FXCollections.observableArrayList();
 
     @FXML
     public void initialize() {
-        // Example: populate ComboBoxes
-        expensetypeCB.getItems().addAll("Office Supplies", "Travel", "Utilities", "Other");
-        paymentmethodCB.getItems().addAll("Cash", "Bank Transfer", "Card", "Other");
-    }
+        expensetypeCB.setItems(FXCollections.observableArrayList(
+                "Stationery", "Travel", "Food", "Utilities", "Maintenance"
+        ));
+        paymentmethodCB.setItems(FXCollections.observableArrayList(
+                "Cash", "Card", "Bank Transfer"
+        ));
+        amountSpinner.setValueFactory(new SpinnerValueFactory.DoubleSpinnerValueFactory(0, 1000, 100, 10));
 
-    @FXML
-    public void uploadReceiptOA(ActionEvent actionEvent) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Upload Receipt");
-        alert.setHeaderText(null);
-        alert.setContentText("Receipt uploaded successfully (placeholder).");
-        alert.showAndWait();
+        // Pre-fill with example data
+        expensetypeCB.setValue("Stationery");
+        paymentmethodCB.setValue("Cash");
+        amountSpinner.getValueFactory().setValue(150.0);
+        reasonTA.setText("Office notebooks and pens");
+        dateDP.setValue(LocalDate.now());
 
-        receiptPath = "path/to/receipt.pdf";
+        expenseList.addAll(
+                new Expense("Stationery", 150.0, "Office notebooks and pens", "Cash", LocalDate.now().minusDays(2)),
+                new Expense("Travel", 300.0, "Taxi fare for meeting", "Card", LocalDate.now().minusDays(1)),
+                new Expense("Food", 120.0, "Team lunch", "Cash", LocalDate.now())
+        );
     }
 
     @FXML
     public void submitOA(ActionEvent actionEvent) {
-        try {
-            Expense expense = new Expense(
-                    expensetypeCB.getValue(),
-                    amountSpinner.getValue(),
-                    reasonTA.getText(),
-                    paymentmethodCB.getValue(),
-                    dateDP.getValue(),
-                    receiptPath
-            );
+        Expense exp = new Expense(
+                expensetypeCB.getValue(),
+                amountSpinner.getValue(),
+                reasonTA.getText(),
+                paymentmethodCB.getValue(),
+                dateDP.getValue()
+        );
+        expenseList.add(exp);
 
-            System.out.println("Submitted Expense: " + expense.toString());
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Expense submitted successfully!");
-            alert.showAndWait();
-
-        } catch (Exception e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setHeaderText(null);
-            alert.setContentText("Please fill all fields correctly.");
-            alert.showAndWait();
-        }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Expense Submitted");
+        alert.setHeaderText(null);
+        alert.setContentText("Expense added: " + exp.toString());
+        alert.showAndWait();
     }
 
     @FXML
     public void cancelOA(ActionEvent actionEvent) {
         expensetypeCB.setValue(null);
+        paymentmethodCB.setValue(null);
         amountSpinner.getValueFactory().setValue(0.0);
         reasonTA.clear();
-        paymentmethodCB.setValue(null);
         dateDP.setValue(null);
-        receiptPath = "";
 
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Cancelled");
@@ -88,5 +82,13 @@ public class AddExpenseController {
         alert.setContentText("Form has been cleared.");
         alert.showAndWait();
     }
+
+    @FXML
+    public void uploadReceiptOA(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Upload Receipt");
+        alert.setHeaderText(null);
+        alert.setContentText("Receipt upload functionality placeholder.");
+        alert.showAndWait();
+    }
 }
-//initial commit//
