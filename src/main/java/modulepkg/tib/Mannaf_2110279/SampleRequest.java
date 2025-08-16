@@ -8,17 +8,13 @@ public class SampleRequest {
     private String reason;
     private int quantity;
     private LocalDate requestDate;
-    private String note;
-    private String status;
 
-    public SampleRequest(String name, String item, String reason, int quantity, LocalDate requestDate, String note, String status) {
+    public SampleRequest(String name, String item, String reason, int quantity, LocalDate requestDate) {
         this.name = name;
         this.item = item;
         this.reason = reason;
         this.quantity = quantity;
         this.requestDate = requestDate;
-        this.note = note;
-        this.status = status;
     }
 
     public String getName() { return name; }
@@ -36,12 +32,6 @@ public class SampleRequest {
     public LocalDate getRequestDate() { return requestDate; }
     public void setRequestDate(LocalDate requestDate) { this.requestDate = requestDate; }
 
-    public String getNote() { return note; }
-    public void setNote(String note) { this.note = note; }
-
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
-
     @Override
     public String toString() {
         return "SampleRequest{" +
@@ -50,8 +40,6 @@ public class SampleRequest {
                 ", reason='" + reason + '\'' +
                 ", quantity=" + quantity +
                 ", requestDate=" + requestDate +
-                ", note='" + note + '\'' +
-                ", status='" + status + '\'' +
                 '}';
     }
 }
