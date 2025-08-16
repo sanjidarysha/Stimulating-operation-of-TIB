@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -7,23 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="641.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modulepkg.tib.Mannaf_2110279.CheckStockLevelsController">
-   <children>
-      <Label layoutX="388.0" layoutY="80.0" />
-      <Label layoutX="334.0" layoutY="73.0" text="Stocks Level">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <TableView fx:id="stocksTV" layoutX="134.0" layoutY="170.0" prefHeight="200.0" prefWidth="577.0">
-        <columns>
-          <TableColumn fx:id="itemNameColumn" prefWidth="206.4000244140625" text="Item Name" />
-          <TableColumn fx:id="catagoryColumn" prefWidth="179.19998168945312" text="Catagory" />
-            <TableColumn fx:id="QuantityColumn" prefWidth="190.40004882812502" text="Quantity" />
-        </columns>
-      </TableView>
-      <Button layoutX="589.0" layoutY="455.0" mnemonicParsing="false" onAction="#downloadlistOA" text="Download List" />
-      <Button layoutX="712.0" layoutY="455.0" mnemonicParsing="false" onAction="#markfororderOA" text="Mark For Order" />
-   </children>
+    <children>
+        <Label layoutX="388.0" layoutY="80.0" />
+        <Label layoutX="334.0" layoutY="73.0" text="Stocks Level">
+            <font>
+                <Font size="20.0" />
+            </font>
+        </Label>
+        <TableView fx:id="stocksTV" layoutX="134.0" layoutY="170.0" prefHeight="200.0" prefWidth="577.0">
+            <columns>
+                <TableColumn fx:id="itemNameColumn" prefWidth="206.4000244140625" text="Item Name" />
+                <TableColumn fx:id="catagoryColumn" prefWidth="179.19998168945312" text="Catagory" />
+                <TableColumn fx:id="QuantityColumn" prefWidth="190.40004882812502" text="Quantity" />
+            </columns>
+        </TableView>
+        <Button layoutX="589.0" layoutY="455.0" mnemonicParsing="false" onAction="#downloadlistOA" text="Download List" />
+        <Button layoutX="712.0" layoutY="455.0" mnemonicParsing="false" onAction="#markfororderOA" text="Mark For Order" />
+    </children>
 </AnchorPane>
