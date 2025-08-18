@@ -57,47 +57,34 @@ public class ManagewitnessController
 
     @javafx.fxml.FXML
     public void update(ActionEvent actionEvent) {
-        String id= idTF.getText();
-        String name= nameTF.getText();
-        Integer age= Integer.parseInt(ageTF.getText());
-        String contactinfo= contactTF.getText();
-        String note= noteTA.getText();
-        if(id.isEmpty()||name.isEmpty()||age==null||contactinfo.isEmpty()||note.isEmpty()){
-            alertLabel.setText("Please fill up all required fields");
-        return;}
-        for (ManagewitnessModel w : witnessList) {
-            if (w.getId().equals(id)) {
-                w.setName(name);
-                w.setAge(age);
-                w.setContactinfo(contactinfo);
-                w.setNote(note);
-                witnesstableView.refresh();
-            }
-
-        ManagewitnessModel witness=new ManagewitnessModel(id,name,age,contactinfo,note);
-        witnessList.add(witness);
-        witnesstableView.getItems().clear();
-        witnesstableView.getItems().addAll(witnessList);
-        alertLabel.setText(" Witness updated.");}
-
+        ManagewitnessModel selected = witnesstableView.getSelectionModel().getSelectedItem();
+        if (selected != null) {
+            alertLabel.setText("updated information successfully");
+            return;
+        }
+        if (selected == null) {
+            alertLabel.setText("please select a column first");
+        }
     }
-
     @javafx.fxml.FXML
     public void add(ActionEvent actionEvent) {
+
+        if (idTF.getText().isEmpty() || nameTF.getText().isEmpty() || ageTF.getText().isEmpty()|| contactTF.getText().isEmpty() || noteTA.getText().isEmpty())
+        {alertLabel.setText("Please fill up all required fields");
+            return;
+        }
+
+
         String id = idTF.getText();
         String name = nameTF.getText();
         Integer age = Integer.parseInt(ageTF.getText());
         String contactinfo = contactTF.getText();
         String note = noteTA.getText();
-        if (id.isEmpty() || name.isEmpty() || age == null || contactinfo.isEmpty() || note.isEmpty()) {
-            alertLabel.setText("Please fill up all required fields");
-            return;
-        }
         ManagewitnessModel witness = new ManagewitnessModel(id, name, age, contactinfo, note);
         witnessList.add(witness);
         witnesstableView.getItems().clear();
         witnesstableView.getItems().addAll(witnessList);
-        alertLabel.setText(" updated witness added.");
+        alertLabel.setText("witness added.");
     }
 
 
@@ -108,8 +95,9 @@ public class ManagewitnessController
         Integer age = Integer.parseInt(ageTF.getText());
         String contactinfo = contactTF.getText();
         String note = noteTA.getText();
-        Object selected = witnesstableView.getSelectionModel().getSelectedItem();
-        if (selected != null) {
+        witnesstableView.getItems().clear();
+        witnesstableView.getItems().addAll(witnessList);
+
 
             try (FileWriter writer = new FileWriter("Witness Info saved data.txt", true)) {
                 writer.write("Witness Id: " + id + "\n");
@@ -125,7 +113,7 @@ public class ManagewitnessController
                 alertLabel.setText("Failed to save data");
 
             }
-        }
+
     }
 
     @javafx.fxml.FXML
@@ -134,3 +122,25 @@ public class ManagewitnessController
     }
 
 }
+//String id= idTF.getText();
+//        String name= nameTF.getText();
+//        Integer age= Integer.parseInt(ageTF.getText());
+//        String contactinfo= contactTF.getText();
+//        String note= noteTA.getText();
+//        if(id.isEmpty()||name.isEmpty()||age==null||contactinfo.isEmpty()||note.isEmpty()){
+//            alertLabel.setText("Please fill up all required fields");
+//        return;}
+//        for (ManagewitnessModel w : witnessList) {
+//            if (w.getId().equals(id)) {
+//                w.setName(name);
+//                w.setAge(age);
+//                w.setContactinfo(contactinfo);
+//                w.setNote(note);
+//                witnesstableView.refresh();
+//            }
+//
+//        ManagewitnessModel witness=new ManagewitnessModel(id,name,age,contactinfo,note);
+//        witnessList.add(witness);
+//        witnesstableView.getItems().clear();
+//        witnesstableView.getItems().addAll(witnessList);
+//        alertLabel.setText(" Witness updated.");}
