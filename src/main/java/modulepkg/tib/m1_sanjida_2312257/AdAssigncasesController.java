@@ -43,17 +43,12 @@ public class AdAssigncasesController
         caselist.add(new AdAssignCases("C3005", "Illegal Funding by NGO","Toslim","pending"));
         caselist.add(new AdAssignCases("C1005", "Bribery in Health Sector","pias","pending"));
         assignTableView.getItems().setAll(caselist);
-        assignTableView.setOnMouseClicked(mouseEvent -> {
-            AdAssignCases selected=assignTableView.getSelectionModel().getSelectedItem();
-            if(selected!=null){
-                officerTF.setText(selected.getOfficer());
-                selected.setStatus("Assigned");
-                assignTableView.refresh();
-            }});
+
     }
 
     @FXML
     public void assign(ActionEvent actionEvent) throws IOException {
+        
         AdAssignCases selected=assignTableView.getSelectionModel().getSelectedItem();
         String officerName = officerTF.getText().trim();;
         if(selected!=null){

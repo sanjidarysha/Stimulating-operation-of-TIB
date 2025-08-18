@@ -63,12 +63,11 @@ public class ReviewpubliccomplaintController
         LocalDate dateInput = dateDP.getValue();
 
         for (ReviewPublicComplaint complaint : reviewPublicComplaintArrayList) {
-            if (complaint.getRegion().equalsIgnoreCase(regionInput)
+            if (complaint.getRegion().equals(regionInput)
                     && complaint.getKeyword().toLowerCase().equals(keywordInput)
                     && complaint.getDateDP().equals(dateInput)) {
                 filteredList.add(complaint);}
         }
-        complainTableView.getItems().clear();
         complainTableView.getItems().addAll(filteredList);
     }
 
@@ -76,9 +75,11 @@ public class ReviewpubliccomplaintController
 
     @FXML
     public void update(ActionEvent actionEvent) {
+
         Object selected = complainTableView.getSelectionModel().getSelectedItem();
         if (selected != null) {
             selected.equals("In Progress");
+            selected.equals(regionTF.getText().trim());
             complainTableView.refresh();
             alertlabel.setText("updated to in progress");
         }

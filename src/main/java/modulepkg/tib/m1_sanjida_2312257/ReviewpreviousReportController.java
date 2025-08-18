@@ -32,8 +32,6 @@ public class ReviewpreviousReportController
     @javafx.fxml.FXML
     private TableColumn <ReviewpreviousReportModel,String>descriptionColumn;
     ObservableList<ReviewpreviousReportModel>reportList  = FXCollections.observableArrayList();
-    @javafx.fxml.FXML
-    private TextField label;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -58,7 +56,6 @@ public class ReviewpreviousReportController
             ReviewpreviousReportModel selected = reportTable.getSelectionModel().getSelectedItem();
             if (selected != null) {
                 descriptionTA.setText(selected.getFullDescription());
-                label.setText("Showing details for: " + selected.getTitle());
             }
         });
 

@@ -57,7 +57,6 @@ public class AdMonitorlogController
                 filtered.add(log);
             }
         }
-
         monitorTV.getItems().setAll(filtered);
         label.setText("Filtered " + filtered.size() + " records");
     }

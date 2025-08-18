@@ -32,6 +32,7 @@ public class AdmanageaccountController {
     public void initialize() {
         roleCB.getItems().addAll(" Investigation officer ", "Admin");
         statusCB.getItems().addAll("Inactive", "Active");
+
         usernameCol.setCellValueFactory(new PropertyValueFactory<>("username"));
         roleCol.setCellValueFactory(new PropertyValueFactory<>("role"));
         statusCol.setCellValueFactory(new PropertyValueFactory<>("status"));
